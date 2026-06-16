@@ -302,7 +302,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   id: 'classic',
                   label: 'Go',
                   Icon: Play,
-                  iconClassName: '',
+                  iconClassName: isFilled ? 'fill-current' : '',
                   show: true,
                   colorScheme: 'primary' as const,
                   onClick: () => {
@@ -351,16 +351,13 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                         onClick();
                       }}
                     >
-                      <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color)'>
-                        <Icon
-                          size={24}
-                          className={cn(
-                            iconClassName,
-                            id === 'classic' && 'animate-bounce',
-                            'text-(--main-color)',
-                          )}
-                        />
-                      </div>
+                      <Icon
+                        size={24}
+                        className={cn(
+                          iconClassName,
+                          id === 'classic' && 'animate-bounce',
+                        )}
+                      />
                       <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
                         {label}
                       </span>
